@@ -1,11 +1,11 @@
-// src/components/GradingForm.js
+// src/components/FullGradingForm.js
 'use client';
 
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-const GradingForm = () => {
+const FullGradingForm = () => {
   const [scores, setScores] = useState({});
   const [deductions, setDeductions] = useState({});
   const [comments, setComments] = useState({});
@@ -35,7 +35,57 @@ const GradingForm = () => {
         { id: "citations", label: "Missing APA citations (-2% per section)", value: 2 }
       ]
     },
-    // ... [The rest of the sections from the previous code]
+    swot: {
+      title: "Company - SWOT Analysis (15%)",
+      items: [
+        { id: "strengths", label: "Strengths - 3+ points on internal capabilities", points: 3.75 },
+        { id: "weaknesses", label: "Weaknesses - 3+ points on internal limitations", points: 3.75 },
+        { id: "opportunities", label: "Opportunities - 3+ points on external possibilities", points: 3.75 },
+        { id: "threats", label: "Threats - 3+ points on external challenges", points: 3.75 }
+      ]
+    },
+    competition: {
+      title: "Competition Analysis (20%)",
+      items: [
+        { id: "criteria", label: "5+ choice criteria with explanations", points: 6 },
+        { id: "competitors", label: "5+ competitors with citations and annotations", points: 8 },
+        { id: "chart", label: "Comparative chart (2+ criteria, 4+ competitors)", points: 6 }
+      ]
+    },
+    collaborators: {
+      title: "Collaborators (10%)",
+      items: [
+        { id: "suppliers", label: "Suppliers listed with citations", points: 3.33 },
+        { id: "distributors", label: "Distributors listed with citations", points: 3.33 },
+        { id: "promotions", label: "Promotions/partners listed with citations", points: 3.33 }
+      ]
+    },
+    customers: {
+      title: "Customers (10%)",
+      items: [
+        { id: "income", label: "Income level with citation", points: 2.5 },
+        { id: "age", label: "Age range with citation", points: 2.5 },
+        { id: "location", label: "Geographic location with citation", points: 2.5 },
+        { id: "usage", label: "Usage patterns with citation", points: 2.5 }
+      ]
+    },
+    presentation: {
+      title: "Presentation (20%)",
+      items: [
+        { id: "subheaders", label: "Clear subheaders throughout", points: 5 },
+        { id: "spacing", label: "Proper spacing between sections", points: 2 },
+        { id: "pageLimit", label: "Within 3-page limit", points: 5 },
+        { id: "noAppendices", label: "No appendices", points: 5 },
+        { id: "bulletLength", label: "Bullet points ≤ 2 lines", points: 2 },
+        { id: "paragraphLength", label: "Paragraphs ≤ 5 lines", points: 2 }
+      ],
+      deductions: [
+        { id: "verbose", label: "Verbose writing (-5%)", value: 5 },
+        { id: "missingCitations", label: "Missing citations (-2% each)", value: 2 },
+        { id: "spelling", label: "Spelling errors (-1% each)", value: 1 },
+        { id: "grammar", label: "Grammar errors (-1% each)", value: 1 }
+      ]
+    }
   };
 
   const handleCheckboxChange = (sectionId, itemId) => {
@@ -213,4 +263,4 @@ const GradingForm = () => {
   );
 };
 
-export default GradingForm;
+export default FullGradingForm;
