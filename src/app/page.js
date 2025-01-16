@@ -1,7 +1,7 @@
 // src/app/page.js
 'use client';
 
-import FullGradingForm from '@/components/GradingForm';
+import GradingForm from '@/components/GradingForm';
 
 export default function Home() {
   return (

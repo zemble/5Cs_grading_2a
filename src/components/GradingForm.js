@@ -1,11 +1,11 @@
-// src/components/FullGradingForm.js
+// src/components/GradingForm.js
 'use client';
 
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-const FullGradingForm = () => {
+const GradingForm = () => {
   const [scores, setScores] = useState({});
   const [deductions, setDeductions] = useState({});
   const [comments, setComments] = useState({});
@@ -263,4 +263,4 @@ const FullGradingForm = () => {
   );
 };
 
-export default FullGradingForm;
+export default GradingForm;
